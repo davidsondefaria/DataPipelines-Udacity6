@@ -12,7 +12,7 @@ bucket="udacity-dend"
 log_data="log_data"
 log_json_path="s3://udacity-dend/log_json_path.json"
 song_data="song_data"
-redshift_conn_id="redshift"
+redshift_conn_id="redshift-cluster-1"
 aws_credentials_id="aws_credentials"
 
 default_args = {
@@ -20,7 +20,7 @@ default_args = {
     'start_date': datetime(2019, 1, 12),
     'depends_on_past': False,
     'retries': 3,
-    'retry_delay': timedelta(minutes=5),
+    'retry_delay': timedelta(minutes=3),
     'email_on_retry': False
 }
 

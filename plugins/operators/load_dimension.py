@@ -33,9 +33,9 @@ class LoadDimensionOperator(BaseOperator):
 #         credentials = aws_hook.get_credentials()
         redshift = PostgresHook(postgres_conn_id=self.redshift_conn_id)
     
-        # Inserting data into fact table
+        # Inserting data into dimensional table
         self.log.info(f'LoadDimensionOperator inserting data into dimension table: {self.table}')
-        formatted_sql = LoadFactOperator.insert_sql.format(
+        formatted_sql = LoadDimensionOperator.insert_sql.format(
             self.table,
             self.table,
             self.sql_query
